@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fitbyamer</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+      <% if current_user %><%= render partial: 'layouts/header' %><% end %>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <section class="content">
+            <div class="row">
+              <div class="col-md-12">
+                <%= yield %>
+              </div>
+            </div>
+          </section>
+      </div>
+    </div>
+  </body>
+</html>

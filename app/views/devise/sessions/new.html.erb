@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="center-block col-md-6" style="float: none;">
+    <%= box_tag title: 'Log in', width: 12 do %>
+      <% form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="box-body">
+          <div class="form-group">
+              <%= f.label "Username Or Email" %>
+            <%= f.text_field :login, autofocus: true, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          </div>
+        </div>
+        <div class="box-footer">
+          <%= f.submit "Log in", class: 'btn btn-success' %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
