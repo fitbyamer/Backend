@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: fitbyamer_production
-  username: fitbyamer
-  password: <%= ENV['FITBYAMER_DATABASE_PASSWORD'] %>
+  username: root
+  password: 
