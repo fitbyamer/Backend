@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :image, ImageUploader
 
+  attr_accessor :login
+
   GENDERS=%w(male female)
   LOCALES=%w(ar en)
   ROLES=%w(guest user admin)
