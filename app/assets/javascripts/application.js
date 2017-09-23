@@ -11,10 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require turbolinks
 //= require bootstrap.min
-//= require admin-lte
 //= require select2-full
 //= require underscore
 //= require bootbox
@@ -24,6 +25,7 @@
 //= require bootstrap-datepicker
 //= require jquery.datetimepicker
 //= require bootstrap-multiselect
+//= require app
 //= require_tree .
 
 

@@ -49,7 +49,7 @@ gem 'config'
 gem 'connection_pool'
 gem 'rack-cache'
 gem 'redis-rack-cache'
-gem 'adminlte-rails'
+gem 'adminlte2-rails'
 gem "select2-rails"
 gem 'bootbox-rails', '~>0.4'
 gem 'will_paginate-bootstrap'
@@ -61,6 +61,8 @@ gem "jquery-fileupload-rails"
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-datetimepicker-rails'
 gem 'bootstrap-multiselect-rails'
+gem 'ffaker'
+gem 'jquery-ui-sass-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

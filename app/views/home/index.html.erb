@@ -1,1 +1,65 @@
-Welcome <%= current_user.username %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">This week's guests</h3>
+
+        <div class="box-tools pull-right">
+          <span class="label label-info"><%= @weekly_users.where_guest.length %> new guests</span>
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body no-padding">
+        <ul class="users-list clearfix">
+
+          <% @weekly_users.where_guest.each do |user| %>
+          <li>
+            <%= image_tag user.image.url, height: 150, width: 150 %>
+            <%= link_to user.username, member_path(id: user.id), class: "users-list-name" %>
+            <span class="users-list-date"><%= time_ago_in_words user.created_at%></span>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="box-footer text-center">
+        <%= link_to "View all users", members_path, class: "uppercase"%>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-6">
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3 class="box-title">This week's premium</h3>
+
+        <div class="box-tools pull-right">
+          <span class="label label-success"><%= @weekly_users.where_user.length %> new premium users</span>
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body no-padding">
+        <ul class="users-list clearfix">
+
+          <% @weekly_users.where_user.each do |user| %>
+          <li>
+            <%= image_tag user.image.url, height: 150, width: 150 %>
+            <%= link_to user.username, member_path(id: user.id), class: "users-list-name" %>
+            <span class="users-list-date"><%= time_ago_in_words user.created_at%></span>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="box-footer text-center">
+        <%= link_to "View all users", members_path, class: "uppercase"%>
+      </div>
+    </div>
+  </div>
+</div>

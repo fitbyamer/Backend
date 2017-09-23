@@ -10,21 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require bootstrap
- *= require font-awesome
- *= require ionicons
- *= require admin-lte
- *= require select2
- *= require select2-bootstrap
- *= require iCheck/all
- *= require datatables/dataTables.bootstrap
- *= require bootstrap-slider
- *= require switchery
- *= require jquery.fileupload
- *= require jquery.fileupload-ui
- *= require bootstrap-datepicker3
- *= require jquery.datetimepicker
- *= require bootstrap-multiselect
  *= require_tree .
  *= require_self
 */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "AdminLTE/AdminLTE";
+@import "AdminLTE/skins/skin-blue";
+@import "jquery.ui.all";

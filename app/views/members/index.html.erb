@@ -1,0 +1,81 @@
+
+<!-- <div class="row">
+  <div class="input-group">
+    <div class="users-search">
+      <input type="text" id="users-search-txt" class="form-control" placeholder="Search...">
+
+      <div class="results" id="users-search-results"></div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <ul id="selected-users" class="list-group">
+
+    </ul>
+  </div> -->
+
+<div class="row">
+  <form action="#" method="get" class="sidebar-form">
+    <div class="input-group">
+      <input type="text" id="users-search-txt" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+            </button>
+          </span>
+    </div>
+  </form>
+  <div class="results" id="users-search-results"></div>
+</div>
+
+
+
+<script>
+  $(document).ready(function(){
+    $('#users-search-txt').autocomplete({
+      autoFocus: true,
+      minLength: 1,
+      source: '/members/search',
+      appendTo: '#users-search-results',
+      select: function(e, ui){
+        window.location.replace('/members/'+ui.item.id);
+      }
+    });
+  });
+    // var app = window.app = {};
+    // app.User = function() {
+    //   this._input = $('#users-search-txt');
+    //   this._initAutocomplete();
+    // };
+    //
+    // app.User.prototype = {
+    //   _initAutocomplete: function() {
+    //   this._input.autocomplete({
+    //     source: '/members/search',
+    //     appendTo: '#users-search-results',
+    //     select: $.proxy(this._select, this)
+    //   }).data("uiAutocomplete")._renderMenu = $.proxy(this._render, this);
+    //   },
+    //
+    //   _select: function(e, ui) {
+    //     console.log(this);
+    //     this._input.val("");
+    //     //this.selected_user_ids.push(ui.item.id);
+    //     //$('#selected-users').append('<li class="list-group-item" value="'+ui.item.id+'">'+ui.item.username+'<i class="fa fa-remove fa-2x pull-right" style="color: red;"></i></li>');
+    //     return false;
+    //   },
+    //
+    //   _render: function(ul, user) {
+    //     var markup = [
+    //       '<span class="title">' + user.username + '</span>'
+    //     ];
+    //
+    //     return $('<li>')
+    //       .append(markup.join(''))
+    //       .appendTo(ul);
+    //   }
+    // };
+    //
+    //
+    // new app.User;
+</script>

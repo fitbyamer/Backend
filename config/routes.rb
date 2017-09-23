@@ -2,5 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'members/search', to: 'members#search'
+  resources :members
+
+  namespace :api, defaults: {subdomain: :api, format: :json}, path: '/api/' do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
+      post 'user/signup', to: 'users#create'
+      post 'user/login', to: 'tokens#create'
+    end
+  end
 end
