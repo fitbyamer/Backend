@@ -3,6 +3,7 @@ class Api::V1::UsersController < ApiApplicationController
   skip_before_action :validate_user!, only: [:create]
 
   def create
+    
   end
 
 

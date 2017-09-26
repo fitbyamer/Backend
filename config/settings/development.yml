@@ -1,5 +1,5 @@
 aws:
-  access_key_id:
-  secret_access_key: 
+  access_key_id: AKIAJFWO4U6S5I6JID3Q
+  secret_access_key: 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
   s3:
     bucket: fitbyamer-live

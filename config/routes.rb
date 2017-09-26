@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       post 'user/signup', to: 'users#create'
       post 'user/login', to: 'tokens#create'
+      resources :users
     end
   end
 end
