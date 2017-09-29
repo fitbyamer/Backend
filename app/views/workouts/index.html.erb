@@ -1,0 +1,41 @@
+<div class="row">
+  <% @workouts.each do |workout| %>
+    <div class="col-sm-12 col-md-6">
+      <div class="box box-solid">
+        <div class="box-body">
+          <h4 style="background-color:#f7f7f7; font-size: 18px; text-align: center; padding: 7px 10px; margin-top: 0;">
+            <%= workout.title %>
+          </h4>
+          <div class="media">
+            <div class="media-left">
+              <!-- <a href="https://themequarry.com/theme/appzia-responsive-admin-dashboard-ASFEDAAB" class="ad-click-event">
+                <img src="https://themequarry.com/storage/images/approved/ASFEDAAB_v1.0.0_5992c3326c307.png" alt="Appzia" class="media-object" style="width: 150px;height: auto;border-radius: 4px;box-shadow: 0 1px 3px rgba(0,0,0,.15);">
+              </a> -->
+
+              <% if workout.video? %>
+                <div align="center" class="embed-responsive embed-responsive-16by9" style="width: 150px;height: auto;border-radius: 4px;box-shadow: 0 1px 3px rgba(0,0,0,.15);">
+                  <video controls class="embed-responsive-item" >
+                    <source src="<%= workout.media.url%>" type="video/mp4">
+                  </video>
+                </div>
+              <% else %>
+                <%= image_tag workout.media.url, style: "width: 150px;height: auto;border-radius: 4px;box-shadow: 0 1px 3px rgba(0,0,0,.15);"%>
+              <% end %>
+            </div>
+            <div class="media-body">
+              <div class="clearfix">
+                <p class="pull-right">
+                  <%= link_to :View, workout_path(id: workout.id), class: "btn btn-success btn-sm ad-click-event"%>
+                </p>
+                <p>Type: <%= workout.category %></p>
+                <p>Main muscle worked: <%= workout.main_muscle_worked %></p>
+                <p>Equipment: <%= workout.equipment%></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= will_paginate @workouts%>
+</div>

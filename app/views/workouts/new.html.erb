@@ -1,0 +1,8 @@
+<div class="row">
+  <%= render partial: 'shared/errors', locals: {resource: @workout} %>
+  <%= box_tag title: "Workout", width: 12 do %>
+    <% form_for @workout do |f| %>
+      <%= render partial: "workouts/form", locals: {f: f} %>
+    <% end %>
+  <% end %>
+</div>

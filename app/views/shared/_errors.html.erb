@@ -1,0 +1,17 @@
+<% if resource.errors.any? %>
+  <div class="col-md-12">
+    <div class="box box-default">
+      <div class="box-header with-border">
+        <i class="fa fa-bullhorn"></i>
+        <h3 class="box-title">Errors</h3>
+      </div>
+      <div class="box-body">
+        <% resource.errors.full_messages.each do |message| %>
+          <div class="callout callout-danger">
+            <p><%= message %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

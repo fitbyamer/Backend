@@ -1,0 +1,39 @@
+<div class="box-body">
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :type %>
+    <%= f.text_field :category, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :main_muscle_worked %>
+    <%= f.text_field :main_muscle_worked, class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :equipment %>
+    <%= f.text_field :equipment, class: "form-control"%>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :guide %>
+    <%= f.text_area :guide, class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Video / image" %>
+    <%= f.file_field :media%>
+  </div>
+
+  <div class="box-footer">
+    <div class="form-group">
+      <%= f.submit :save, class: "btn btn-primary"%>
+    </div>
+  </div>
+
+</div>

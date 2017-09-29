@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'members/search', to: 'members#search'
   resources :members
+  resources :workouts
 
   namespace :api, defaults: {subdomain: :api, format: :json}, path: '/api/' do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do

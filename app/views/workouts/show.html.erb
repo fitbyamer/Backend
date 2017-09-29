@@ -1,0 +1,47 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <% if @workout.video? %>
+          <div align="center" class="embed-responsive embed-responsive-16by9">
+            <video controls class="embed-responsive-item">
+              <source src="<%= @workout.media.url%>" type="video/mp4">
+            </video>
+          </div>
+        <% else %>
+          <%= image_tag @workout.media.url %>
+        <% end %>
+        <h3 class="profile-username text-center"><%= @workout.title %></h3>
+        <ul class="list-group list-group-unbordered">
+          <li class="list-group-item">
+            <b>Type</b> <a class="pull-right"><%= @workout.category%></a>
+          </li>
+          <li class="list-group-item">
+            <b>Main muscle worked</b> <a class="pull-right"><%= @workout.main_muscle_worked %></a>
+          </li>
+          <li class="list-group-item">
+            <b>Equipment</b> <a class="pull-right"><%= @workout.equipment %></a>
+          </li>
+        </ul>
+
+        <ul class="list-group list-group-unbordered">
+          <li class="list-group-item"><a href="#" class="btn btn-primary btn-block"><b>Assign to users</b></a></li>
+          <li class="list-group-item"><a href="#" class="btn btn-primary btn-block"><b>Assign to guests</b></a></li>
+          <li class="list-group-item"><%= link_to :Edit, edit_workout_path(id: @workout.id), class:"btn btn-success btn-block"%></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Guide</h3>
+      </div>
+      <div class="box-body">
+        <% @workout.guide.split("\n").each do |m| %>
+          <p><%= m %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
